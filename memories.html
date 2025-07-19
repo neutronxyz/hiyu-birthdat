@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Memories 🔒</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: url("https://i.pinimg.com/1200x/0c/e4/af/0ce4af2cfcf65e340518368439faad5c.jpg");
+      background-size: cover;
+      background-position: center;
+      font-family: 'Segoe UI', sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+
+    .lock-screen, .content {
+      text-align: center;
+      background: rgba(255, 255, 255, 0.9);
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    }
+
+    .lock-screen input {
+      padding: 10px 20px;
+      font-size: 1rem;
+      border: 2px solid #ff99aa;
+      border-radius: 8px;
+      outline: none;
+      margin-top: 10px;
+    }
+
+    .lock-screen button {
+      padding: 10px 25px;
+      font-size: 1rem;
+      background-color: #ff99aa;
+      border: none;
+      color: white;
+      border-radius: 8px;
+      margin-top: 10px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .lock-screen button:hover {
+      background-color: #ff6f91;
+    }
+
+    .error {
+      color: red;
+      margin-top: 10px;
+    }
+
+    .gallery img {
+      width: 300px;
+      margin: 15px;
+      border-radius: 15px;
+      box-shadow: 0 8px 15px rgba(0,0,0,0.2);
+    }
+
+    audio {
+      margin-top: 30px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- LOCK SCREEN -->
+  <div class="lock-screen" id="lockScreen">
+    <h2>🔒 Gift Locked</h2>
+    <p>Enter password to unlock</p>
+    <input type="password" id="passwordInput" placeholder="Enter password..." />
+    <br />
+    <button onclick="checkPassword()">Unlock</button>
+    <p class="error" id="errorMsg"></p>
+  </div>
+
+  <!-- UNLOCKED CONTENT -->
+  <div class="content" id="memoriesContent" style="display: none;">
+    <h2>💗 this is for you, baby</h2>
+    
+    <div class="gallery">
+      <img src="media/photo1.jpg" alt="Memory 1">
+      <img src="media/photo2.jpg" alt="Memory 2">
+      <img src="media/photo3.jpg" alt="Memory 3">
+      <!-- Add more photos here -->
+    </div>
+
+    <h3>🎧 A voice note for you</h3>
+    <audio controls>
+      <source src="media/voice.mp3" type="audio/mpeg">
+      Your browser does not support the audio element.
+    </audio>
+  </div>
+
+  <script>
+    const correctPassword = "2272009"; // Change if needed
+
+    function checkPassword() {
+      const input = document.getElementById("passwordInput").value;
+      const errorMsg = document.getElementById("errorMsg");
+      
+      if (input === correctPassword) {
+        document.getElementById("lockScreen").style.display = "none";
+        document.getElementById("memoriesContent").style.display = "block";
+      } else {
+        errorMsg.textContent = "❌ Wrong password. Try again!";
+      }
+    }
+  </script>
+</body>
+</html>

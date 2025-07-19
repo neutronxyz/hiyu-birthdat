@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Birthday</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      height: 100vh;
+      background: url('https://i.pinimg.com/736x/7e/f7/a8/7ef7a8b0978641423c3575b79a654219.jpg') no-repeat center center fixed;
+      background-size: cover;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      overflow: hidden;
+      position: relative;
+    }
+
+    /* Soft blur overlay */
+    .overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      backdrop-filter: blur(4px);
+      background: rgba(255, 255, 255, 0.3);
+      z-index: 1;
+    }
+
+    .centered-content {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      z-index: 10;
+      animation: fadeInUp 1.2s ease forwards;
+    }
+
+    .centered-content h1 {
+      font-size: 3rem;
+      color: #000; /* Changed to black */
+      margin-bottom: 0.5rem;
+      text-shadow: 0 0 10px rgba(255, 255, 255, 0.4);
+    }
+
+    .centered-content p {
+      font-size: 1.2rem;
+      color: #444;
+    }
+
+    .open-letter-btn {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 12px 25px;
+      background-color: #ffb6c1;
+      color: white;
+      font-weight: bold;
+      text-decoration: none;
+      border-radius: 30px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .open-letter-btn:hover {
+      transform: scale(1.05);
+      box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+    }
+
+    /* Background blobs */
+    .blob {
+      position: absolute;
+      border-radius: 50%;
+      opacity: 0;
+      animation: float 8s infinite ease-in-out alternate, fadeIn 2s forwards;
+      z-index: 1;
+    }
+
+    .blob1 {
+      width: 400px;
+      height: 400px;
+      background: radial-gradient(circle, #ff9a9e, #fad0c4);
+      top: -100px;
+      left: -100px;
+      animation-delay: 0s;
+    }
+
+    .blob2 {
+      width: 300px;
+      height: 300px;
+      background: radial-gradient(circle, #a1c4fd, #c2e9fb);
+      bottom: -80px;
+      right: -80px;
+      animation-delay: 1s;
+    }
+
+    .blob3 {
+      width: 200px;
+      height: 200px;
+      background: radial-gradient(circle, #fbc2eb, #a6c1ee);
+      top: 20%;
+      right: 10%;
+      animation-delay: 2s;
+    }
+
+    @keyframes float {
+      0% {
+        transform: translateY(0) scale(1);
+      }
+      100% {
+        transform: translateY(-30px) scale(1.05);
+      }
+    }
+
+    @keyframes fadeInUp {
+      0% {
+        opacity: 0;
+        transform: translate(-50%, -40%);
+      }
+      100% {
+        opacity: 1;
+        transform: translate(-50%, -50%);
+      }
+    }
+
+    @keyframes fadeIn {
+      to {
+        opacity: 0.3;
+      }
+    }
+
+    /* Sparkles */
+    .sparkle {
+      position: absolute;
+      width: 6px;
+      height: 6px;
+      background: #fff;
+      border-radius: 50%;
+      opacity: 0.8;
+      animation: sparkle 3s infinite ease-in-out;
+    }
+
+    @keyframes sparkle {
+      0%, 100% {
+        transform: scale(1);
+        opacity: 0.8;
+      }
+      50% {
+        transform: scale(1.5);
+        opacity: 0.3;
+      }
+    }
+
+    .sparkle:nth-child(1) { top: 20%; left: 30%; animation-delay: 0s; }
+    .sparkle:nth-child(2) { top: 10%; left: 70%; animation-delay: 1s; }
+    .sparkle:nth-child(3) { top: 60%; left: 80%; animation-delay: 2s; }
+    .sparkle:nth-child(4) { top: 80%; left: 20%; animation-delay: 1.5s; }
+
+  </style>
+</head>
+<body>
+
+  <!-- Soft white blur overlay -->
+  <div class="overlay"></div>
+
+  <!-- Floating blobs -->
+  <div class="blob blob1"></div>
+  <div class="blob blob2"></div>
+  <div class="blob blob3"></div>
+
+  <!-- Sparkles -->
+  <div class="sparkle"></div>
+  <div class="sparkle"></div>
+  <div class="sparkle"></div>
+  <div class="sparkle"></div>
+
+  <!-- Centered birthday text -->
+  <div class="centered-content">
+    <h1>HAPPY BIRTHDAY BABYYY ❤️ 🌼</h1>
+    <p>This is for you</p> 
+    <a href="letter.html" class="open-letter-btn">Open Your Letter 💌</a>
+  </div>
+
+</body>
+</html>

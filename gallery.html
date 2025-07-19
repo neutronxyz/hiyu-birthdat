@@ -1,0 +1,82 @@
+<<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Gallery</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: url('https://i.pinimg.com/736x/9d/be/a5/9dbea532579dc54af0b07f78e37ddb02.jpg') no-repeat center center fixed;
+      background-size: cover;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+      padding: 40px;
+      max-width: 1000px;
+      margin: auto;
+      backdrop-filter: blur(6px);
+    }
+
+    .photo {
+      width: 100%;
+      border-radius: 20px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+      transition: transform 0.3s ease;
+      object-fit: cover;
+      height: 250px;
+    }
+
+    .photo:hover {
+      transform: scale(1.05);
+    }
+
+    h1 {
+      text-align: center;
+      color: #fff;
+      text-shadow: 0 0 10px rgba(0,0,0,0.5);
+      margin-top: 30px;
+      font-size: 2.5rem;
+    }
+
+    .back-btn, .next-btn {
+      display: block;
+      margin: 20px auto;
+      text-align: center;
+      background: #ffb6c1;
+      color: white;
+      text-decoration: none;
+      padding: 10px 25px;
+      border-radius: 30px;
+      font-weight: bold;
+      transition: background 0.3s ease;
+      width: fit-content;
+    }
+
+    .back-btn:hover, .next-btn:hover {
+      background: #ff6f91;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Her Beautiful Moments 💖</h1>
+
+  <div class="gallery">
+    <img src="hiyaa1.jpg" alt="Her Pic 1" class="photo" />
+    <img src="hiyaa2.jpg" alt="Her Pic 2" class="photo" />
+    <img src="hiyaa3.jpg" alt="Her Pic 3" class="photo" />
+    <img src="hiyaa4.jpg" alt="Her Pic 4" class="photo" />
+    <img src="hiyaa5.jpg" alt="Her Pic 5" class="photo" />
+  </div>
+
+  <a href="index.html" class="back-btn">← Back</a>
+  <a href="memories.html" class="next-btn">→ Next</a>
+
+</body>
+</html>
